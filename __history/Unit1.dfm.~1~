@@ -1,0 +1,65 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 594
+  ClientWidth = 897
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 8
+    Width = 857
+    Height = 369
+    DataSource = OraDataSource1
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object OraSession1: TOraSession
+    ConnectMode = cmSysDBA
+    Options.ConvertEOL = True
+    Options.Direct = True
+    Username = 'SYS'
+    Server = 'localhost:1521'
+    Connected = True
+    LoginPrompt = False
+    HomeName = 'ORCL'
+    Left = 640
+    Top = 432
+    EncryptedPassword = 'CEFFCDFFCCFF'
+  end
+  object OraQuery1: TOraQuery
+    Session = OraSession1
+    SQL.Strings = (
+      'SELECT  s_id,'
+      '        s_name,'
+      '        COUNT(sb_book) AS books_taken'
+      'FROM subscribers'
+      
+        '     JOIN subscriptions ON subscribers.s_id = subscriptions.sb_s' +
+        'ubscriber'
+      
+        'WHERE subscriptions.sb_is_active = '#39'Y'#39' AND sb_finish < CURRENT_D' +
+        'ATE    '
+      'GROUP BY s_id, s_name')
+    Active = True
+    Left = 712
+    Top = 432
+  end
+  object OraDataSource1: TOraDataSource
+    DataSet = OraQuery1
+    Left = 784
+    Top = 432
+  end
+end

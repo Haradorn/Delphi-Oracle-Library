@@ -27,6 +27,7 @@ object Form5: TForm5
     Top = 64
     Width = 177
     Height = 169
+    Stretch = True
   end
   object DBEdit1: TDBEdit
     Left = 88

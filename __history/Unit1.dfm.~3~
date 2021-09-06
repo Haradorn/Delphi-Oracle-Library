@@ -1,0 +1,163 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 869
+  ClientWidth = 1355
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 8
+    Width = 857
+    Height = 369
+    DataSource = OraDataSource1
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'S_ID'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'S_NAME'
+        Width = 400
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'BOOKS_TAKEN'
+        Visible = True
+      end>
+  end
+  object Button1: TButton
+    Left = 912
+    Top = 48
+    Width = 113
+    Height = 49
+    Caption = 'Button1'
+    TabOrder = 1
+    OnClick = Button1Click
+  end
+  object DBGrid2: TDBGrid
+    Left = 8
+    Top = 448
+    Width = 1297
+    Height = 401
+    DataSource = OraDataSource2
+    TabOrder = 2
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'BOOK'
+        Width = 200
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'GENRS'
+        Width = 400
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'AUTHS'
+        Width = 600
+        Visible = True
+      end>
+  end
+  object OraSession1: TOraSession
+    ConnectMode = cmSysDBA
+    Options.ConvertEOL = True
+    Options.Direct = True
+    Username = 'SYS'
+    Server = 'localhost:1521'
+    Connected = True
+    LoginPrompt = False
+    HomeName = 'ORCL'
+    Left = 904
+    Top = 256
+    EncryptedPassword = 'CEFFCDFFCCFF'
+  end
+  object OraQuery1: TOraQuery
+    Session = OraSession1
+    SQL.Strings = (
+      'SELECT  s_id,'
+      '        s_name,'
+      '        COUNT(sb_book) AS books_taken'
+      'FROM subscribers'
+      
+        '     JOIN subscriptions ON subscribers.s_id = subscriptions.sb_s' +
+        'ubscriber'
+      
+        'WHERE subscriptions.sb_is_active = '#39'Y'#39' AND sb_finish < CURRENT_D' +
+        'ATE    '
+      'GROUP BY s_id, s_name')
+    Active = True
+    Left = 976
+    Top = 256
+  end
+  object OraDataSource1: TOraDataSource
+    DataSet = OraQuery1
+    Left = 1048
+    Top = 256
+  end
+  object OraDataSource2: TOraDataSource
+    DataSet = OraQuery2
+    Left = 1064
+    Top = 384
+  end
+  object OraQuery2: TOraQuery
+    Session = OraSession1
+    SQL.Strings = (
+      'SELECT b_name AS book,'
+      '        UTL_RAW.CAST_TO_NVARCHAR2'
+      '        ('
+      '            LISTAGG'
+      '            ('
+      '                UTL_RAW.CAST_TO_RAW(g_name),'
+      '                UTL_RAW.CAST_TO_RAW(N'#39', '#39')'
+      '            )'
+      '            WITHIN GROUP(ORDER BY g_name)'
+      '        )'
+      '        AS genrs,'
+      '        UTL_RAW.CAST_TO_NVARCHAR2'
+      '        ('
+      '            LISTAGG'
+      '            ('
+      '                UTL_RAW.CAST_TO_RAW(a_name),'
+      '                UTL_RAW.CAST_TO_RAW(N'#39', '#39')'
+      '            )'
+      '            WITHIN GROUP(ORDER BY a_name)'
+      '        )'
+      '        AS auths'
+      'FROM    books'
+      '        JOIN m2m_books_genres  USING(b_id)'
+      '        JOIN genres           USING(g_id)'
+      '        JOIN m2m_books_authors USING(b_id)'
+      '        JOIN authors USING(a_id)'
+      'GROUP BY b_id,'
+      '         b_name')
+    Active = True
+    Left = 976
+    Top = 384
+  end
+end

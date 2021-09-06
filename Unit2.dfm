@@ -42,7 +42,7 @@ object Form2: TForm2
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 44417.948979710700000000
-    ReportOptions.LastChange = 44418.912803113430000000
+    ReportOptions.LastChange = 44444.950761967590000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       ''
@@ -125,7 +125,7 @@ object Form2: TForm2
         RowCount = 0
         object frxDBDataset1BOOK: TfrxMemoView
           Width = 226.771800000000000000
-          Height = 18.897650000000000000
+          Height = 22.677180000000000000
           DataField = 'BOOK'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
@@ -142,7 +142,7 @@ object Form2: TForm2
         object frxDBDataset1AUTHORS: TfrxMemoView
           Left = 226.771800000000000000
           Width = 226.771800000000000000
-          Height = 18.897650000000000000
+          Height = 22.677180000000000000
           DataField = 'AUTHORS'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
@@ -159,7 +159,7 @@ object Form2: TForm2
         object frxDBDataset1GENRES: TfrxMemoView
           Left = 453.543600000000000000
           Width = 234.330860000000000000
-          Height = 18.897650000000000000
+          Height = 22.677180000000000000
           DataField = 'GENRES'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'

@@ -1,0 +1,42 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Grids, Vcl.DBGrids, Data.DB,
+  DBAccess, Ora, MemDS, OraCall, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    OraSession1: TOraSession;
+    OraQuery1: TOraQuery;
+    OraDataSource1: TOraDataSource;
+    DBGrid1: TDBGrid;
+    Button1: TButton;
+    OraDataSource2: TOraDataSource;
+    OraQuery2: TOraQuery;
+    DBGrid2: TDBGrid;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+uses Unit2;
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  Form2.Show;
+  Form2.frxReport1.ShowReport();
+end;
+
+end.
