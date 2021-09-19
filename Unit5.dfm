@@ -35,7 +35,6 @@ object Form5: TForm5
     Width = 121
     Height = 21
     DataField = 'G_ID'
-    DataSource = Form1.OraDataSource3
     TabOrder = 0
   end
   object DBMemo1: TDBMemo
@@ -44,7 +43,6 @@ object Form5: TForm5
     Width = 241
     Height = 57
     DataField = 'PHOTO'
-    DataSource = Form1.OraDataSource3
     TabOrder = 1
   end
   object Button1: TButton

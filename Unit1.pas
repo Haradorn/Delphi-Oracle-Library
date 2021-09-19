@@ -13,12 +13,9 @@ type
     OraSession1: TOraSession;
     OraQuery1: TOraQuery;
     OraDataSource1: TOraDataSource;
-    DBGrid1: TDBGrid;
     Button1: TButton;
     OraQuery2: TOraQuery;
     OraDataSource2: TOraDataSource;
-    OraQuery3: TOraQuery;
-    OraDataSource3: TOraDataSource;
     DBGrid3: TDBGrid;
     Button5: TButton;
     Button6: TButton;
@@ -35,17 +32,16 @@ type
     OraQuery4: TOraQuery;
     OraDataSource4: TOraDataSource;
     DBGrid4: TDBGrid;
-    Button8: TButton;
-    Button9: TButton;
-    Button10: TButton;
     TabSheet3: TTabSheet;
     DBGrid5: TDBGrid;
-    Button11: TButton;
-    Button12: TButton;
-    Button13: TButton;
     OraQuery5: TOraQuery;
     OraDataSource5: TOraDataSource;
+    TabSheet4: TTabSheet;
+    DBGrid6: TDBGrid;
+    OraQuery6: TOraQuery;
+    OraDataSource6: TOraDataSource;
     MainMenu1: TMainMenu;
+    Rybub1: TMenuItem;
     N1: TMenuItem;
     N2: TMenuItem;
     N3: TMenuItem;
@@ -55,17 +51,6 @@ type
     N7: TMenuItem;
     N8: TMenuItem;
     N9: TMenuItem;
-    N10: TMenuItem;
-    N11: TMenuItem;
-    N12: TMenuItem;
-    N13: TMenuItem;
-    N14: TMenuItem;
-    N15: TMenuItem;
-    N16: TMenuItem;
-    TabSheet4: TTabSheet;
-    DBGrid6: TDBGrid;
-    OraQuery6: TOraQuery;
-    OraDataSource6: TOraDataSource;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -73,6 +58,9 @@ type
     procedure Button5Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
     procedure Button7Click(Sender: TObject);
+    procedure N7Click(Sender: TObject);
+    procedure N8Click(Sender: TObject);
+    procedure N9Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -112,7 +100,7 @@ end;
 
 procedure TForm1.Button5Click(Sender: TObject);
 begin
-  Form1.OraQuery3.Append;
+  //Form1.OraQuery3.Append;
   Form5.ShowModal;
 end;
 
@@ -124,6 +112,21 @@ end;
 procedure TForm1.Button7Click(Sender: TObject);
 begin
   Form6.ShowModal;
+end;
+procedure TForm1.N7Click(Sender: TObject);
+begin
+    Form1.OraQuery2.Append;
+    Form3.ShowModal;
+end;
+
+procedure TForm1.N8Click(Sender: TObject);
+begin
+  Form3.ShowModal;
+end;
+
+procedure TForm1.N9Click(Sender: TObject);
+begin
+  Form4.ShowModal;
 end;
 
 end.

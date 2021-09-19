@@ -1,0 +1,132 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Grids, Vcl.DBGrids, Data.DB,
+  DBAccess, Ora, MemDS, OraCall, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls,
+  Vcl.ComCtrls, Vcl.Menus;
+
+type
+  TForm1 = class(TForm)
+    OraSession1: TOraSession;
+    OraQuery1: TOraQuery;
+    OraDataSource1: TOraDataSource;
+    Button1: TButton;
+    OraQuery2: TOraQuery;
+    OraDataSource2: TOraDataSource;
+    DBGrid3: TDBGrid;
+    Button5: TButton;
+    Button6: TButton;
+    Button7: TButton;
+    DBEdit2: TDBEdit;
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    DBGrid2: TDBGrid;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    DBEdit1: TDBEdit;
+    TabSheet2: TTabSheet;
+    OraQuery4: TOraQuery;
+    OraDataSource4: TOraDataSource;
+    DBGrid4: TDBGrid;
+    TabSheet3: TTabSheet;
+    DBGrid5: TDBGrid;
+    OraQuery5: TOraQuery;
+    OraDataSource5: TOraDataSource;
+    MainMenu1: TMainMenu;
+    N1: TMenuItem;
+    N2: TMenuItem;
+    N3: TMenuItem;
+    N4: TMenuItem;
+    N5: TMenuItem;
+    N6: TMenuItem;
+    N7: TMenuItem;
+    N8: TMenuItem;
+    N9: TMenuItem;
+    N10: TMenuItem;
+    N11: TMenuItem;
+    N12: TMenuItem;
+    N13: TMenuItem;
+    N14: TMenuItem;
+    N15: TMenuItem;
+    N16: TMenuItem;
+    TabSheet4: TTabSheet;
+    DBGrid6: TDBGrid;
+    OraQuery6: TOraQuery;
+    OraDataSource6: TOraDataSource;
+    N17: TMenuItem;
+    N18: TMenuItem;
+    N19: TMenuItem;
+    N20: TMenuItem;
+    N21: TMenuItem;
+    N22: TMenuItem;
+    N23: TMenuItem;
+    N24: TMenuItem;
+    N25: TMenuItem;
+    N26: TMenuItem;
+    N27: TMenuItem;
+    N28: TMenuItem;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+uses Unit2, Unit3, Unit4, Unit5, Unit6;
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  Form2.Show;
+  Form2.frxReport1.ShowReport();
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+  Form1.OraQuery2.Append;
+  Form3.ShowModal;
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+  Form3.ShowModal;
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+begin
+  Form4.ShowModal;
+end;
+
+procedure TForm1.Button5Click(Sender: TObject);
+begin
+  //Form1.OraQuery3.Append;
+  Form5.ShowModal;
+end;
+
+procedure TForm1.Button6Click(Sender: TObject);
+begin
+  Form5.ShowModal;
+end;
+
+procedure TForm1.Button7Click(Sender: TObject);
+begin
+  Form6.ShowModal;
+end;
+
+end.

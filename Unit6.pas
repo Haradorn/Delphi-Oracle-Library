@@ -33,11 +33,11 @@ var
   d: string;
 begin
   d := Form1.DBEdit2.Text;
-  Form1.OraQuery3.Delete;
-  Form1.OraQuery3.SQL.Text := 'DELETE FROM mtr WHERE g_id = ' + d + '';
-  Form1.OraQuery3.ExecSQL;
-  Form1.OraQuery3.SQL.Text := 'SELECT * FROM mtr';
-  Form1.OraQuery3.ExecSQL;
+  //Form1.OraQuery3.Delete;
+  //Form1.OraQuery3.SQL.Text := 'DELETE FROM mtr WHERE g_id = ' + d + '';
+  //Form1.OraQuery3.ExecSQL;
+  //Form1.OraQuery3.SQL.Text := 'SELECT * FROM mtr';
+  //Form1.OraQuery3.ExecSQL;
   Form6.Close;
 end;
 

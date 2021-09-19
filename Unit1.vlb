@@ -1,11 +1,5 @@
-﻿[DBGrid1]
-Coordinates=156,234,64,36
-
-[OraSession1]
+﻿[OraSession1]
 Coordinates=37,327,89,36
-
-[OraDataSource3]
-Coordinates=343,1,111,102
 
 [OraDataSource1]
 Coordinates=194,1,111,124
@@ -37,10 +31,7 @@ Coordinates=280,10,59,58
 [OraQuery2]
 Coordinates=10,10,84,146
 
-[OraQuery3]
-Coordinates=192,10,78,102
-
 []
-Coordinates=455,166,62,36
+Coordinates=156,234,64,36
 Visible=True
 

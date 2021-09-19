@@ -40,22 +40,22 @@ procedure TForm5.Button1Click(Sender: TObject);
 var
   pic: string;
 begin
-  Form1.OraQuery3.Edit;
+  //Form1.OraQuery3.Edit;
   if Form5.OpenPictureDialog1.Execute then Form5.DBMemo1.Text := Form5.OpenPictureDialog1.FileName;
   pic := Form5.DBMemo1.Text;
   Form5.Image1.Picture.LoadFromFile(pic);
-  Form1.OraQuery3.Post;
+  //Form1.OraQuery3.Post;
 end;
 
 procedure TForm5.Button2Click(Sender: TObject);
 begin
-  if Form1.OraQuery3.Modified then Form1.OraQuery3.Post;
+  //if Form1.OraQuery3.Modified then Form1.OraQuery3.Post;
 
 end;
 
 procedure TForm5.Button3Click(Sender: TObject);
 begin
-  Form1.OraQuery3.Cancel;
+  //Form1.OraQuery3.Cancel;
   Form5.Close;
 end;
 procedure TForm5.FormCreate(Sender: TObject);
