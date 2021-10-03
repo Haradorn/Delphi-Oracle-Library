@@ -1,0 +1,82 @@
+object Form23: TForm23
+  Left = 0
+  Top = 0
+  Caption = #1054#1082#1085#1086' '#1079#1072#1087#1088#1086#1089#1086#1074' '#1082' '#1041#1044
+  ClientHeight = 897
+  ClientWidth = 1381
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  WindowState = wsMaximized
+  OnActivate = FormActivate
+  OnClose = FormClose
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Splitter1: TSplitter
+    Left = 0
+    Top = 448
+    Width = 1381
+    Height = 8
+    Cursor = crVSplit
+    Align = alBottom
+    ExplicitTop = 447
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 0
+    Width = 1381
+    Height = 448
+    Align = alClient
+    DataSource = Form1.OraDataSource13
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object Button1: TButton
+    Left = 0
+    Top = 846
+    Width = 1381
+    Height = 51
+    Align = alBottom
+    Caption = #1042#1067#1055#1054#1051#1053#1048#1058#1068
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    OnClick = Button1Click
+    ExplicitTop = 561
+    ExplicitWidth = 852
+  end
+  object Memo1: TMemo
+    Left = 0
+    Top = 456
+    Width = 1381
+    Height = 390
+    Align = alBottom
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    Lines.Strings = (
+      'Memo1')
+    ParentFont = False
+    TabOrder = 2
+  end
+end

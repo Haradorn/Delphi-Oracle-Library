@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Grids, Vcl.DBGrids, Data.DB,
   DBAccess, Ora, MemDS, OraCall, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls,
-  Vcl.ComCtrls, Vcl.Menus;
+  Vcl.ComCtrls, Vcl.Menus, Vcl.ExtCtrls;
 
 type
   TForm1 = class(TForm)
@@ -86,6 +86,27 @@ type
     OraDataSource9: TOraDataSource;
     DBGrid1: TDBGrid;
     DBEdit6: TDBEdit;
+    TabSheet6: TTabSheet;
+    TabSheet7: TTabSheet;
+    DBGrid7: TDBGrid;
+    DBGrid8: TDBGrid;
+    OraQuery10: TOraQuery;
+    OraDataSource10: TOraDataSource;
+    OraQuery11: TOraQuery;
+    OraDataSource11: TOraDataSource;
+    DBEdit7: TDBEdit;
+    DBEdit8: TDBEdit;
+    Panel1: TPanel;
+    Button11: TButton;
+    OraDataSource12: TOraDataSource;
+    OraQuery12: TOraQuery;
+    Button12: TButton;
+    OraQuery13: TOraQuery;
+    OraDataSource13: TOraDataSource;
+    Label1: TLabel;
+    Edit1: TEdit;
+    OraQuery14: TOraQuery;
+    OraDataSource14: TOraDataSource;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -111,6 +132,16 @@ type
     procedure N19Click(Sender: TObject);
     procedure N20Click(Sender: TObject);
     procedure N21Click(Sender: TObject);
+    procedure N22Click(Sender: TObject);
+    procedure N23Click(Sender: TObject);
+    procedure N24Click(Sender: TObject);
+    procedure N25Click(Sender: TObject);
+    procedure N26Click(Sender: TObject);
+    procedure N27Click(Sender: TObject);
+    procedure Button11Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure Button12Click(Sender: TObject);
+    procedure Edit1Change(Sender: TObject);
   private
     { Private declarations }
   public
@@ -125,17 +156,31 @@ implementation
 {$R *.dfm}
 
 uses Unit2, Unit3, Unit4, Unit5, Unit6, Unit7, Unit8, Unit9, Unit10, Unit11,
-  Unit12, Unit13, Unit14, Unit15, Unit16, Unit17;
+  Unit12, Unit13, Unit14, Unit15, Unit16, Unit17, Unit18, Unit19, Unit20,
+  Unit21, Unit22, Unit23;
 
 procedure TForm1.Button10Click(Sender: TObject);
 begin
   Form13.Show;
   Form13.frxReport1.ShowReport();
+  Form13.frxReport1.Print;
+end;
+
+procedure TForm1.Button11Click(Sender: TObject);
+begin
+  Form22.Show;
+  Form22.frxReport1.ShowReport();
+end;
+
+procedure TForm1.Button12Click(Sender: TObject);
+begin
+  Form23.ShowModal;
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
   Form2.Show;
+  Form1.OraQuery1.ExecSQL;
   Form2.frxReport1.ShowReport();
 end;
 
@@ -157,7 +202,7 @@ end;
 
 procedure TForm1.Button5Click(Sender: TObject);
 begin
-  //Form1.OraQuery3.Append;
+  Form1.OraQuery14.Append;
   Form5.ShowModal;
 end;
 
@@ -173,6 +218,7 @@ end;
 procedure TForm1.Button8Click(Sender: TObject);
 begin
   Form7.Show;
+  Form1.OraQuery3.ExecSQL;
   Form7.frxReport1.ShowReport();
 end;
 
@@ -180,6 +226,25 @@ procedure TForm1.Button9Click(Sender: TObject);
 begin
   Form8.Show;
   Form8.frxReport1.ShowReport();
+end;
+
+procedure TForm1.Edit1Change(Sender: TObject);
+var help1, help2: string;
+begin
+  help1 := '%' + Form1.Edit1.Text + '%';
+  help2 := QuotedStr(help1);
+  with Form1.OraQuery2 do
+  begin
+    close;
+    SQL.Clear;
+    SQL.Add('select * from books where b_name like ' + help2 + ' or b_year like ' + help2 + ' or b_quantity like ' + help2 + ' order by b_name');
+    open;
+  end;
+end;
+
+procedure TForm1.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  if OraQuery13.Active then OraQuery13.Close;
 end;
 
 procedure TForm1.N10Click(Sender: TObject);
@@ -223,11 +288,13 @@ end;
 procedure TForm1.N7Click(Sender: TObject);
 begin
     Form1.OraQuery2.Append;
+    Form3.Caption := 'Добавить запись в таблицу';
     Form3.ShowModal;
 end;
 
 procedure TForm1.N8Click(Sender: TObject);
 begin
+  Form3.Caption := 'Изменить запись в таблице';
   Form3.ShowModal;
 end;
 
@@ -260,6 +327,38 @@ end;
 procedure TForm1.N21Click(Sender: TObject);
 begin
     Form17.ShowModal;
+end;
+
+procedure TForm1.N22Click(Sender: TObject);
+begin
+    Form1.OraQuery10.Append;
+    Form18.ShowModal;
+end;
+
+procedure TForm1.N23Click(Sender: TObject);
+begin
+    Form18.ShowModal;
+end;
+
+procedure TForm1.N24Click(Sender: TObject);
+begin
+    Form19.ShowModal;
+end;
+
+procedure TForm1.N25Click(Sender: TObject);
+begin
+    Form1.OraQuery11.Append;
+    Form20.ShowModal;
+end;
+
+procedure TForm1.N26Click(Sender: TObject);
+begin
+    Form20.ShowModal;
+end;
+
+procedure TForm1.N27Click(Sender: TObject);
+begin
+    Form21.ShowModal;
 end;
 
 end.

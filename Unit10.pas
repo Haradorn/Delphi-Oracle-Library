@@ -31,7 +31,7 @@ uses Unit1;
 procedure TForm10.Button1Click(Sender: TObject);
 var d: string;
 begin
-  d := Form1.DBEdit2.Text;
+  d := Form1.DBEdit3.Text;
   Form1.OraQuery4.Delete;
   Form1.OraQuery4.SQL.Text := 'DELETE FROM authors WHERE a_id = ' + d + '';
   Form1.OraQuery4.ExecSQL;

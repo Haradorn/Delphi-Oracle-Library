@@ -34,6 +34,7 @@ uses Unit1;
 procedure TForm11.Button1Click(Sender: TObject);
 begin
   if Form1.OraQuery5.Modified then Form1.OraQuery5.Post;
+  Form11.Close();
 end;
 
 procedure TForm11.Button2Click(Sender: TObject);

@@ -1,9 +1,11 @@
 object Form9: TForm9
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = #1056#1072#1073#1086#1090#1072' '#1089' '#1072#1074#1090#1086#1088#1072#1084#1080
-  ClientHeight = 146
-  ClientWidth = 611
+  ClientHeight = 156
+  ClientWidth = 621
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,7 +13,7 @@ object Form9: TForm9
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  Position = poMainFormCenter
+  Position = poOwnerFormCenter
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel

@@ -5,7 +5,7 @@ object Form16: TForm16
   BorderStyle = bsSingle
   Caption = #1042#1099#1076#1072#1095#1072' '#1082#1085#1080#1075
   ClientHeight = 238
-  ClientWidth = 525
+  ClientWidth = 535
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
