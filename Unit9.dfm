@@ -4,7 +4,7 @@ object Form9: TForm9
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = #1056#1072#1073#1086#1090#1072' '#1089' '#1072#1074#1090#1086#1088#1072#1084#1080
-  ClientHeight = 156
+  ClientHeight = 153
   ClientWidth = 621
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET

@@ -16,11 +16,6 @@ type
     Button1: TButton;
     OraQuery2: TOraQuery;
     OraDataSource2: TOraDataSource;
-    DBGrid3: TDBGrid;
-    Button5: TButton;
-    Button6: TButton;
-    Button7: TButton;
-    DBEdit2: TDBEdit;
     PageControl1: TPageControl;
     TabSheet1: TTabSheet;
     DBGrid2: TDBGrid;
@@ -105,13 +100,11 @@ type
     OraDataSource13: TOraDataSource;
     Label1: TLabel;
     Edit1: TEdit;
-    OraQuery14: TOraQuery;
-    OraDataSource14: TOraDataSource;
+    StatusBar1: TStatusBar;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
-    procedure Button5Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
     procedure Button7Click(Sender: TObject);
     procedure N7Click(Sender: TObject);
@@ -200,12 +193,6 @@ begin
   Form4.ShowModal;
 end;
 
-procedure TForm1.Button5Click(Sender: TObject);
-begin
-  Form1.OraQuery14.Append;
-  Form5.ShowModal;
-end;
-
 procedure TForm1.Button6Click(Sender: TObject);
 begin
   Form5.ShowModal;
@@ -240,6 +227,8 @@ begin
     SQL.Add('select * from books where b_name like ' + help2 + ' or b_year like ' + help2 + ' or b_quantity like ' + help2 + ' order by b_name');
     open;
   end;
+  if Form1.OraQuery2.RecordCount <> 0 then Form1.StatusBar1.SimpleText := 'Записей: ' + IntToStr(Form1.OraQuery2.RecordCount)
+  else Form1.StatusBar1.SimpleText := 'Записей нет, удовлетворяющих критерию поиска!';
 end;
 
 procedure TForm1.FormClose(Sender: TObject; var Action: TCloseAction);
@@ -250,12 +239,12 @@ end;
 procedure TForm1.N10Click(Sender: TObject);
 begin
   Form1.OraQuery4.Append;
-  Form9.ShowModal;
+  Form5.ShowModal;
 end;
 
 procedure TForm1.N11Click(Sender: TObject);
 begin
-  Form9.ShowModal;
+  Form5.ShowModal;
 end;
 
 procedure TForm1.N12Click(Sender: TObject);
