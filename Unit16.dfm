@@ -4,8 +4,8 @@ object Form16: TForm16
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = #1042#1099#1076#1072#1095#1072' '#1082#1085#1080#1075
-  ClientHeight = 238
-  ClientWidth = 535
+  ClientHeight = 228
+  ClientWidth = 763
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -85,40 +85,13 @@ object Form16: TForm16
     DataSource = Form1.OraDataSource9
     TabOrder = 2
   end
-  object DBEdit4: TDBEdit
-    Left = 376
-    Top = 21
-    Width = 121
-    Height = 21
-    DataField = 'SB_START'
-    DataSource = Form1.OraDataSource9
-    TabOrder = 3
-  end
-  object DBEdit5: TDBEdit
-    Left = 376
-    Top = 61
-    Width = 121
-    Height = 21
-    DataField = 'SB_FINISH'
-    DataSource = Form1.OraDataSource9
-    TabOrder = 4
-  end
-  object DBEdit6: TDBEdit
-    Left = 376
-    Top = 101
-    Width = 121
-    Height = 21
-    DataField = 'SB_IS_ACTIVE'
-    DataSource = Form1.OraDataSource9
-    TabOrder = 5
-  end
   object Button1: TButton
     Left = 24
     Top = 160
     Width = 129
     Height = 41
     Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100
-    TabOrder = 6
+    TabOrder = 3
     OnClick = Button1Click
   end
   object Button2: TButton
@@ -127,7 +100,55 @@ object Form16: TForm16
     Width = 129
     Height = 41
     Caption = #1054#1090#1084#1077#1085#1080#1090#1100
-    TabOrder = 7
+    TabOrder = 4
     OnClick = Button2Click
+  end
+  object DBComboBox1: TDBComboBox
+    Left = 376
+    Top = 101
+    Width = 145
+    Height = 21
+    DataField = 'SB_IS_ACTIVE'
+    DataSource = Form1.OraDataSource9
+    Items.Strings = (
+      'Y'
+      'N')
+    TabOrder = 5
+  end
+  object DBEdit4: TDBEdit
+    Left = 376
+    Top = 21
+    Width = 145
+    Height = 21
+    DataField = 'SB_START'
+    DataSource = Form1.OraDataSource9
+    TabOrder = 6
+  end
+  object DBEdit5: TDBEdit
+    Left = 376
+    Top = 61
+    Width = 145
+    Height = 21
+    DataField = 'SB_FINISH'
+    DataSource = Form1.OraDataSource9
+    TabOrder = 7
+  end
+  object DateTimePicker1: TDateTimePicker
+    Left = 552
+    Top = 21
+    Width = 186
+    Height = 21
+    Date = 44489.933702094910000000
+    Time = 44489.933702094910000000
+    TabOrder = 8
+  end
+  object DateTimePicker2: TDateTimePicker
+    Left = 552
+    Top = 61
+    Width = 186
+    Height = 21
+    Date = 44489.933702094910000000
+    Time = 44489.933702094910000000
+    TabOrder = 9
   end
 end

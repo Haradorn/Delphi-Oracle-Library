@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 388
   Caption = #1048#1057' "'#1043#1086#1088#1086#1076#1089#1082#1072#1103' '#1073#1080#1073#1083#1080#1086#1090#1077#1082#1072'"'
-  ClientHeight = 852
+  ClientHeight = 880
   ClientWidth = 1486
   Color = clMoneyGreen
   Font.Charset = DEFAULT_CHARSET
@@ -17,12 +17,12 @@ object Form1: TForm1
   OnClose = FormClose
   DesignSize = (
     1486
-    852)
+    880)
   PixelsPerInch = 96
   TextHeight = 13
   object Button1: TButton
     Left = 960
-    Top = 416
+    Top = 444
     Width = 265
     Height = 33
     Anchors = [akRight, akBottom]
@@ -37,12 +37,12 @@ object Form1: TForm1
     OnClick = Button1Click
   end
   object PageControl1: TPageControl
-    Left = 8
-    Top = 8
-    Width = 1457
+    Left = 0
+    Top = 0
+    Width = 1486
     Height = 393
-    ActivePage = TabSheet2
-    Anchors = [akLeft, akTop, akRight]
+    ActivePage = TabSheet1
+    Align = alTop
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -19
@@ -136,9 +136,9 @@ object Form1: TForm1
       Caption = #1040#1074#1090#1086#1088#1099
       ImageIndex = 1
       object DBGrid4: TDBGrid
-        Left = 16
+        Left = 24
         Top = 12
-        Width = 529
+        Width = 393
         Height = 253
         DataSource = OraDataSource4
         ReadOnly = True
@@ -152,16 +152,13 @@ object Form1: TForm1
           item
             Expanded = False
             FieldName = 'A_ID'
+            Width = 50
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'A_NAME'
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'PHOTO'
+            Width = 300
             Visible = True
           end>
       end
@@ -356,7 +353,7 @@ object Form1: TForm1
   end
   object Button8: TButton
     Left = 960
-    Top = 480
+    Top = 508
     Width = 265
     Height = 33
     Anchors = [akRight, akBottom]
@@ -372,7 +369,7 @@ object Form1: TForm1
   end
   object Button9: TButton
     Left = 840
-    Top = 544
+    Top = 572
     Width = 385
     Height = 33
     Anchors = [akRight, akBottom]
@@ -388,7 +385,7 @@ object Form1: TForm1
   end
   object Button10: TButton
     Left = 840
-    Top = 608
+    Top = 636
     Width = 385
     Height = 33
     Anchors = [akRight, akBottom]
@@ -404,12 +401,11 @@ object Form1: TForm1
   end
   object Panel1: TPanel
     Left = 0
-    Top = 804
+    Top = 832
     Width = 1486
     Height = 29
     Align = alBottom
     TabOrder = 5
-    ExplicitTop = 752
     object Label1: TLabel
       Left = 1
       Top = 1
@@ -423,8 +419,7 @@ object Form1: TForm1
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      ExplicitLeft = 0
-      ExplicitHeight = 31
+      ExplicitHeight = 23
     end
     object Edit1: TEdit
       Left = 147
@@ -445,7 +440,7 @@ object Form1: TForm1
   end
   object Button11: TButton
     Left = 840
-    Top = 670
+    Top = 698
     Width = 385
     Height = 35
     Anchors = [akRight, akBottom]
@@ -476,23 +471,18 @@ object Form1: TForm1
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 833
+    Top = 861
     Width = 1486
     Height = 19
     Panels = <>
     SimplePanel = True
-    ExplicitLeft = 424
-    ExplicitTop = 824
-    ExplicitWidth = 0
   end
   object OraSession1: TOraSession
-    ConnectMode = cmSysDBA
     Options.ConvertEOL = True
     Options.Direct = True
-    Username = 'SYS'
+    Username = 'haradorn'
     Server = 'localhost:1521'
     Connected = True
-    LoginPrompt = False
     HomeName = 'ORCL'
     Left = 68
     Top = 656
@@ -675,18 +665,8 @@ object Form1: TForm1
   object OraQuery3: TOraQuery
     Session = OraSession1
     SQL.Strings = (
-      'SELECT DISTINCT b_id,'
-      '                b_name,'
-      '                (b_quantity - (SELECT COUNT(int.sb_book)'
-      '                               FROM subscriptions int'
-      '                               WHERE int.sb_book = ext.sb_book'
-      '                               AND int.sb_is_active = '#39'Y'#39'))'
-      'AS'
-      '                real_count'
-      'FROM books'
-      '     LEFT OUTER JOIN subscriptions ext'
-      '                  ON books.b_id = ext.sb_book'
-      'ORDER BY real_count DESC')
+      'select b_id, b_name, b_quantity'
+      'from books')
     Active = True
     Left = 268
     Top = 656

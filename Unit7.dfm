@@ -155,7 +155,7 @@ object Form7: TForm7
           Left = 548.031850000000000000
           Width = 158.740260000000000000
           Height = 18.897650000000000000
-          DataField = 'REAL_COUNT'
+          DataField = 'B_QUANTITY'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           Font.Charset = DEFAULT_CHARSET
@@ -166,7 +166,7 @@ object Form7: TForm7
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frxDBDataset1."REAL_COUNT"]')
+            '[frxDBDataset1."B_QUANTITY"]')
           ParentFont = False
         end
       end

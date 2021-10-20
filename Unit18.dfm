@@ -62,7 +62,7 @@ object Form18: TForm18
     Top = 96
     Width = 89
     Height = 41
-    Caption = #1059#1076#1072#1083#1080#1090#1100
+    Caption = #1054#1090#1084#1077#1085#1080#1090#1100
     TabOrder = 3
     OnClick = Button2Click
   end
