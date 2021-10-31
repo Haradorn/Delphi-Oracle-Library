@@ -150,7 +150,7 @@ implementation
 
 uses Unit2, Unit3, Unit4, Unit5, Unit6, Unit7, Unit8, Unit9, Unit10, Unit11,
   Unit12, Unit13, Unit14, Unit15, Unit16, Unit17, Unit18, Unit19, Unit20,
-  Unit21, Unit22, Unit23;
+  Unit21, Unit22, Unit23, Unit24;
 
 procedure TForm1.Button10Click(Sender: TObject);
 begin
@@ -236,44 +236,52 @@ begin
   if OraQuery13.Active then OraQuery13.Close;
 end;
 
+//Добавить запись об авторе
 procedure TForm1.N10Click(Sender: TObject);
 begin
   Form1.OraQuery4.Append;
   Form5.ShowModal;
 end;
 
+//Изменить запись об авторе
 procedure TForm1.N11Click(Sender: TObject);
 begin
   Form5.ShowModal;
 end;
 
+//Удалить запись об авторе
 procedure TForm1.N12Click(Sender: TObject);
 begin
   Form10.ShowModal;
 end;
 
+//Добавить запись о жанре
 procedure TForm1.N13Click(Sender: TObject);
 begin
   Form1.OraQuery5.Append;
   Form11.ShowModal;
 end;
 
+//Изменить запись о жанре
 procedure TForm1.N14Click(Sender: TObject);
 begin
   Form11.ShowModal;
 end;
 
+//Удалить запись о жанре
 procedure TForm1.N15Click(Sender: TObject);
 begin
    Form12.ShowModal;
 end;
 
+//Добавить запись о подписчике
 procedure TForm1.N16Click(Sender: TObject);
 begin
     Form1.OraQuery6.Append;
     Form14.ShowModal;
 end;
 
+//Добавить запись о книге
 procedure TForm1.N7Click(Sender: TObject);
 begin
     Form1.OraQuery2.Append;
@@ -281,70 +289,83 @@ begin
     Form3.ShowModal;
 end;
 
+//Изменить запись о книге
 procedure TForm1.N8Click(Sender: TObject);
 begin
   Form3.Caption := 'Изменить запись в таблице';
   Form3.ShowModal;
 end;
 
+//Удалить запись о книге
 procedure TForm1.N9Click(Sender: TObject);
 begin
   Form4.ShowModal;
 end;
 
+//Изменить запись о подписчике
 procedure TForm1.N17Click(Sender: TObject);
 begin
   Form14.ShowModal;
 end;
 
+//Удалить запись о подписчике
 procedure TForm1.N18Click(Sender: TObject);
 begin
   Form15.ShowModal;
 end;
 
+//Добавить запись о выдаче книги
 procedure TForm1.N19Click(Sender: TObject);
 begin
     Form1.OraQuery9.Append;
     Form16.ShowModal;
 end;
 
+//изменение данных о выдаче книги
 procedure TForm1.N20Click(Sender: TObject);
 begin
-    Form16.ShowModal;
+    Form24.ShowModal;
 end;
 
+//Удалить запись о выдаче книги
 procedure TForm1.N21Click(Sender: TObject);
 begin
     Form17.ShowModal;
 end;
 
+//добавить запись "Книга-Автор"
 procedure TForm1.N22Click(Sender: TObject);
 begin
     Form1.OraQuery10.Append;
     Form18.ShowModal;
 end;
 
+//изменить запись "Книга-Автор"
 procedure TForm1.N23Click(Sender: TObject);
 begin
     Form18.ShowModal;
 end;
 
+//Удалить запись "Книга-Автор"
 procedure TForm1.N24Click(Sender: TObject);
 begin
     Form19.ShowModal;
 end;
 
+//Добавить запись "Книга-жанр"
 procedure TForm1.N25Click(Sender: TObject);
 begin
     Form1.OraQuery11.Append;
     Form20.ShowModal;
 end;
 
+//Изменить запись "Книга-жанр"
 procedure TForm1.N26Click(Sender: TObject);
 begin
     Form20.ShowModal;
 end;
 
+//Удалить запись "Книга-жанр"
 procedure TForm1.N27Click(Sender: TObject);
 begin
     Form21.ShowModal;

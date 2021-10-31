@@ -14,6 +14,7 @@ object Form16: TForm16
   Font.Style = []
   OldCreateOrder = False
   Position = poOwnerFormCenter
+  OnActivate = FormActivate
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -138,8 +139,9 @@ object Form16: TForm16
     Top = 21
     Width = 186
     Height = 21
-    Date = 44489.933702094910000000
-    Time = 44489.933702094910000000
+    Date = 44489.000000000000000000
+    Time = 44489.000000000000000000
+    DateFormat = dfLong
     TabOrder = 8
   end
   object DateTimePicker2: TDateTimePicker
@@ -147,8 +149,9 @@ object Form16: TForm16
     Top = 61
     Width = 186
     Height = 21
-    Date = 44489.933702094910000000
-    Time = 44489.933702094910000000
+    Date = 44489.000000000000000000
+    Time = 44489.000000000000000000
+    DateFormat = dfLong
     TabOrder = 9
   end
 end

@@ -41,7 +41,7 @@ object Form1: TForm1
     Top = 0
     Width = 1486
     Height = 393
-    ActivePage = TabSheet1
+    ActivePage = TabSheet7
     Align = alTop
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -219,7 +219,7 @@ object Form1: TForm1
       object DBGrid6: TDBGrid
         Left = 3
         Top = 3
-        Width = 574
+        Width = 894
         Height = 238
         DataSource = OraDataSource6
         ReadOnly = True
@@ -233,13 +233,28 @@ object Form1: TForm1
           item
             Expanded = False
             FieldName = 'S_ID'
+            Title.Caption = #1048#1044
+            Width = 50
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'S_NAME'
-            Title.Caption = #1048#1084#1103
+            Title.Caption = #1060#1048#1054
             Width = 300
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'S_LAST_VISIT'
+            Title.Caption = #1055#1086#1089#1083#1077#1076#1085#1080#1081' '#1074#1080#1079#1080#1090
+            Width = 200
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'COUNT_BOOK_TAKEN'
+            Title.Caption = #1042#1079#1103#1090#1099#1093' '#1082#1085#1080#1075' '#1079#1072' '#1074#1089#1077' '#1074#1088#1077#1084#1103
             Visible = True
           end>
       end
@@ -270,6 +285,43 @@ object Form1: TForm1
         TitleFont.Height = -19
         TitleFont.Name = 'Tahoma'
         TitleFont.Style = []
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'SB_ID'
+            Title.Caption = #1048#1044' '#1074#1099#1076#1072#1095#1080
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'SB_SUBSCRIBER'
+            Title.Caption = #1048#1044' '#1055#1086#1076#1087#1080#1089#1095#1080#1082#1072
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'SB_BOOK'
+            Title.Caption = #1048#1044' '#1050#1085#1080#1075#1080
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'SB_START'
+            Title.Caption = #1044#1072#1090#1072' '#1074#1099#1076#1072#1095#1080
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'SB_FINISH'
+            Title.Caption = #1044#1072#1090#1072' '#1074#1086#1079#1074#1088#1072#1090#1072
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'SB_IS_ACTIVE'
+            Title.Caption = #1050#1085#1080#1075#1072' '#1091' '#1095#1080#1090#1072#1090#1077#1083#1103
+            Visible = True
+          end>
       end
       object DBEdit6: TDBEdit
         Left = 960

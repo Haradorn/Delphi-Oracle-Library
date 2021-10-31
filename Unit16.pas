@@ -27,6 +27,7 @@ type
     DateTimePicker2: TDateTimePicker;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -56,6 +57,11 @@ procedure TForm16.Button2Click(Sender: TObject);
 begin
   Form1.OraQuery9.Cancel;
   Form16.Close();
+end;
+
+procedure TForm16.FormActivate(Sender: TObject);
+begin
+  DateTimePicker1.Time := Now();
 end;
 
 end.
